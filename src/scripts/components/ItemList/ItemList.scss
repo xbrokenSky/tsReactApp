@@ -1,0 +1,17 @@
+.list-div {
+
+    &__title {
+        font: {
+            size: 14px;
+        }
+    }
+
+    & .list {
+        display: flex;
+    
+        padding: 0;
+    
+        flex-flow: column;
+        align-items: center;
+    }
+}

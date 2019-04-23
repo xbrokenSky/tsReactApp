@@ -1,0 +1,9 @@
+.add-item-form {
+    display: flex;
+
+    justify-content: center;
+
+    &__txt-input {
+        max-width: 190px;
+    }
+}

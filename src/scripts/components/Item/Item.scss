@@ -1,0 +1,21 @@
+.list-item {
+    display: flex;
+
+    width: 80%;
+
+    justify-content: space-between;
+
+    &:not(:first-child) {
+        margin-top: 10px;
+    }
+
+    &__text {
+        max-width: 70%;
+
+        word-break: break-all;
+    }
+
+    &__del-btn {
+        width: 22%;
+    }
+}
