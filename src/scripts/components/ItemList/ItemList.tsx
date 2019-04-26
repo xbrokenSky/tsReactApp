@@ -27,7 +27,9 @@ class ItemList extends React.Component<ListProps, ListState> {
         const items = this.props.itemData.map((item): JSX.Element => {
             const { id, text } = item;
             const { deleteItem } = this.props;
-            const removeItem = (): void => {
+            const removeItem = (e: React.MouseEvent<HTMLButtonElement>): void => {
+                e.stopPropagation();
+
                 deleteItem(id);
 
                 this.setState(({ clickCount }: { clickCount: number }): object => {
