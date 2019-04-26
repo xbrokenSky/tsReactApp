@@ -1,0 +1,17 @@
+.app-header {
+
+    &__nav-list {
+        display: flex;
+    }
+
+    &__nav-item {
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    & .selected {
+        color: blue;
+    }
+}

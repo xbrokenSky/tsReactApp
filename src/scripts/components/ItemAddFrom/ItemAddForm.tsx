@@ -41,6 +41,8 @@ export class ItemAddForm extends React.PureComponent<AddFormProps, AddFormState>
             this.setState({
                 inputValue: '',
             });
+
+            return null;
         }
 
         return null;
