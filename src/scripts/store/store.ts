@@ -1,5 +1,9 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import getPokemonSaga from '../sagas/sagas';
 import appReducer from '../reducers/reducers';
+
+const sagaMiddleware = createSagaMiddleware();
 
 export const initialState = {
     itemData: [
@@ -13,6 +17,13 @@ export const initialState = {
         },
     ],
 };
-const store = createStore(appReducer, initialState);
+
+export const store = createStore(
+    appReducer,
+    initialState,
+    applyMiddleware(sagaMiddleware)
+);
+
+sagaMiddleware.run(getPokemonSaga);
 
 export default store;

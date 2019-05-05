@@ -1,5 +1,5 @@
 import { getId } from '../helpers/funcHelpers';
-import { DataAction } from '../types/action.interface';
+import { DataAction, FetchAction, FetchStarted } from '../types/action.interface';
 import C from '../constants/constants';
 
 export const addItem = (text: string): DataAction => {
@@ -29,5 +29,32 @@ export const editItem = (id: number, text: string): DataAction => {
             id,
             text,
         },
+    };
+};
+
+export const fetchData = (pokeName: string): FetchAction => {
+    return {
+        type: C.FETCH_DATA,
+        payload: pokeName,
+    };
+};
+
+export const fetchStarted = (): FetchStarted => {
+    return {
+        type: C.FETCH_DATA_STARTED,
+    };
+};
+
+export const fetchSuccess = (data: object): FetchAction => {
+    return {
+        type: C.FETCH_DATA_SUCCEED,
+        payload: data,
+    };
+};
+
+export const fetchFailed = (error: object): FetchAction => {
+    return {
+        type: C.FETCH_DATA_FAILED,
+        payload: error,
     };
 };
